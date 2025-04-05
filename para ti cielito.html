@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Jazmín, con amor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#ffe6f0, #fff0f5);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2.5rem;
+      color: #e60073;
+    }
+
+    .mensaje {
+      font-size: 1.4rem;
+      color: #cc0052;
+      margin: 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .galeria {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .galeria img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .corazon {
+      position: absolute;
+      font-size: 24px;
+      animation: flotar 6s infinite;
+      color: #ff66b2;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Para Jazmín, con todo mi amor - Maberick</h1>
+
+  <div class="mensaje">Desde el primer momento supe que eras especial 💗</div>
+  <div class="mensaje">Tu sonrisa hace que mis días sean mejores 💘</div>
+  <div class="mensaje">Gracias por existir y por ser mi todo 💗</div>
+  <div class="mensaje">Te amo muchisimo cielito 💘</div>
+
+  <div class="galeria">
+    <img src="jazmin.JPEG" alt="Foto 1">
+    <img src="cielo.JPEG" alt="Foto 2">
+    <img src="cielito.JPEG" alt="Foto 3">
+  </div>
+
+  <audio autoplay loop>
+    <source src="catorce.MP3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script>
+    function crearCorazon() {
+      const corazon = document.createElement('div');
+      corazon.classList.add('corazon');
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.fontSize = (Math.random() * 20 + 20) + "px";
+      corazon.innerText = Math.random() > 0.5 ? "💗" : "💘";
+      document.body.appendChild(corazon);
+
+      setTimeout(() => {
+        corazon.remove();
+      }, 6000);
+    }
+
+    setInterval(crearCorazon, 400);
+  </script>
+
+</body>
+</html>
